@@ -1,3 +1,4 @@
+# Pide la cantidad del total de alumnos y valida que este en rango permitido 1 al 30
 def validar_cantidad_alumnos() -> int:
     """Pide la cantidad de alumnos y valida que el valor este entre 1 y 30"""
     print("Ingrese la cantidad total de alumnos")
@@ -10,6 +11,7 @@ def validar_cantidad_alumnos() -> int:
     return alumnos
 
 
+# Pide la nota del parcial y verifica que este entre el numero 0 y 10
 def validar_nota(numero_parcial: int) -> int:
     """Pide el tipo de parcial y valida que el valor este entre 1 y 10"""
     nota = int(input(f"Ingrese la nota del parcial {numero_parcial}: "))
@@ -21,6 +23,7 @@ def validar_nota(numero_parcial: int) -> int:
     return nota
 
 
+# Pide el nombre, valida longitud minima y verifica solo se hayan ingresado letras y espacios 
 def validar_nombre() -> str:
     """Pide nombre de alumno, valida que tenga 5 caracteres y contenga unicamente letras y espacios"""
 
@@ -35,6 +38,7 @@ def validar_nombre() -> str:
 
         letras_ingresadas_correctas = True
 
+        # Hace un recorrido evaluando si es una letra mayus o minus, o un espacio
         for caracter in nombre:
             if not (("a" <= caracter <= "z") or ("A" <= caracter <= "Z") or (caracter == " ")):
                 letras_ingresadas_correctas = False
