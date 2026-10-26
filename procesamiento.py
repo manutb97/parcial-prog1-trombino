@@ -1,6 +1,7 @@
 from typing import List
 
 
+# Calcula el promedio general haciendo la suma de todoslos valores y diviendolos por el total
 def promedio_general(promedios: List) -> float:
     """Devuelve el promedio general del curso luego de calcularlo"""
     suma_total = 0
@@ -12,6 +13,7 @@ def promedio_general(promedios: List) -> float:
     return suma_total / cantidad
 
 
+# Se encarga de recorrer las listas buscando el promedio mas alto y guardando el nombre que corresponde
 def promedio_alumno_mayor(nombres: List, promedios: List):
     """Busca el promedio del alumno mas alto y su nombre"""
 
@@ -26,6 +28,7 @@ def promedio_alumno_mayor(nombres: List, promedios: List):
     return mejor_nombre, mejor_promedio
 
 
+# Busca en las listas el promedio mas bajo y lo guarda en el respectivo nombre
 def promedio_alumno_menor(nombres: List, promedios: List):
     """Busca el promedio del alumno mas bajo y su nombre"""
 
@@ -40,6 +43,7 @@ def promedio_alumno_menor(nombres: List, promedios: List):
     return menor_nombre, menor_promedio
 
 
+# Lista a los alumnos segun la nota final de cada uno en promocion, parobados o desaprobados
 def alumnos_por_promedio(promedios: List):
     """Realiza un recuento de cuantos alumnos, promocionan, aprueban o desaprueban"""
 
@@ -58,6 +62,7 @@ def alumnos_por_promedio(promedios: List):
     return alumnos_promocion, alumnos_aprobado, alumnos_desaprobado
 
 
+# Metodo burbuja: ordena de mayor a menor y mueve en paralelo todas las listas vinculadas
 def alumnos_ranking(nombres: List, promedios: List, notas_parcial_1: List, notas_parcial_2: List):
     """Organiza a los alumnos por ranking del mejor al peor promedio, aplicando metodo burbuja"""
 
@@ -66,12 +71,14 @@ def alumnos_ranking(nombres: List, promedios: List, notas_parcial_1: List, notas
     for i in range(total_alumnos - 1):
         for j in range(total_alumnos - 1 - i):
             if promedios[j] < promedios[j + 1]:
+                # Intercambiamos los promedios y tambien los datos en las listas paralelas
                 promedios[j], promedios[j + 1] = promedios[j + 1], promedios[j]
                 nombres[j], nombres[j + 1] = nombres[j + 1], nombres[j]
                 notas_parcial_1[j], notas_parcial_1[j + 1] = notas_parcial_1[j + 1], notas_parcial_1[j]
                 notas_parcial_2[j], notas_parcial_2[j + 1] = notas_parcial_2[j + 1], notas_parcial_2[j]
 
 
+# Recorre cada letra del nombre para sumar la cantidad de vocales
 def cantidad_vocales(nombre: str):
     """Cuenta la cantidad de vocales que tiene el nombre que se ingresa"""
 
@@ -84,6 +91,7 @@ def cantidad_vocales(nombre: str):
     return vocales
 
 
+# Da vuelta el texto de nombre
 def nombre_invertido(nombre: str):
     """Devuelve el nombre a la inversa de forma tradicional"""
     invertido = ""
@@ -92,6 +100,7 @@ def nombre_invertido(nombre: str):
     return invertido
 
 
+# Busca el alumno por coincidencia de nombre y devuelve la informacion en conjunto
 def buscador_alumno(nombres: List, nombre_ingresado: str, promedios: List, notas_parcial_1: List, notas_parcial_2: List):
     """Busca a un alumno segun nombre ingresado y si lo encuentra, devuelve sus datos"""
 
