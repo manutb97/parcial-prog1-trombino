@@ -85,10 +85,11 @@ def cantidad_vocales(nombre: str):
 
 
 def nombre_invertido(nombre: str):
-    """Devuelve el nombre a la inversa"""
-
-    nombre_invertido_str = nombre[::-1]
-    return nombre_invertido_str
+    """Devuelve el nombre a la inversa de forma tradicional"""
+    invertido = ""
+    for i in range(len(nombre) - 1, -1, -1):
+        invertido = invertido + nombre[i]
+    return invertido
 
 
 def buscador_alumno(nombres: List, nombre_ingresado: str, promedios: List, notas_parcial_1: List, notas_parcial_2: List):
