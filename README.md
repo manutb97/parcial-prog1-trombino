@@ -1,6 +1,6 @@
-# NOTAFACIL - Primer parcial de Programación 1
+# NOTAFACIL - Primer parcial de Programacion 1
 
-Sistema de Python que procesa datos académicos de los alumnos de un curso
+Sistema de Python que procesa datos academicos de los alumnos de un curso
 
 ## Estrctura
 
@@ -12,8 +12,8 @@ Sistema de Python que procesa datos académicos de los alumnos de un curso
 
 Mediante la carga de los alumnos(cada uno con las notas de ambos parciales), puede observar distintos detalles como:
 * Ranking de alumnos por promedio
-* Estadísticas de todo el curso
-* Búsqueda de alumno mediante el nombre
+* Estadisticas de todo el curso
+* Busqueda de alumno mediante el nombre
 * Juego de nombres
 
 ## Ejecucion
