@@ -1,6 +1,7 @@
 from procesamiento import *
 from validaciones import validar_nombre, validar_nota
 
+# las listas paralelas para almacenar los datos de alumnos y contador manual
 nombres = []
 promedios = []
 notas_parcial_1 = []
@@ -9,6 +10,7 @@ cantidad = 0
 
 opcion = ""
 
+# el bucle principal del menu que va a repetir hasta que el usuario elija 0 para salir del programa
 while opcion != "0":
     print("\n===== NOTAFACIL =====")
     print("1. Cargar alumnos")
@@ -21,6 +23,7 @@ while opcion != "0":
 
     opcion = input("Seleccione una opcion: ")
 
+    # 1 Carga los datos ya validados y almacenados mediante el uso de las listas
     if opcion == "1":
         print("\n[Carga de datos]")
         nombre = validar_nombre()  # Usa tu función que valida letras y espacios
@@ -36,6 +39,7 @@ while opcion != "0":
         cantidad = cantidad + 1
         print("El alumno se ingreso con exito!")
 
+    # 2 muestra el listado completo realizando un recorrido segun el total de alumnos ingresados
     elif opcion == "2":
         print("\n[Listado de alumnos]")
         if cantidad == 0:
@@ -46,6 +50,7 @@ while opcion != "0":
             for i in range(cantidad):
                 print(f"- {nombres[i]} | Parcial 1: {notas_parcial_1[i]} | Parcial 2: {notas_parcial_2[i]} | Promedio: {promedios[i]}")
 
+    # 3 opcion que se encarga de llamar a funciones de procesamiento para calcular las estadisticas generales de los alumnos
     elif opcion == "3":
         print("\n[Estadísticas del curso]")
         if cantidad == 0:
@@ -65,6 +70,7 @@ while opcion != "0":
             print(f"Alumnos aprobados: {aprobados}")
             print(f"Alumnos desaprobados: {desaprobados}")
 
+    # 4 opcion donde se aplica el metodo burbuja, ordena el ranking y lo muestra en la pantalla
     elif opcion == "4":
         print("\n[Ranking de alumnos (ordenado)]")
         if cantidad == 0:
@@ -75,6 +81,7 @@ while opcion != "0":
             for i in range(cantidad):
                 print(f"{i+1}. {nombres[i]} - Promedio: {promedios[i]}")
 
+    # 5 busca un alumno especifico por nombre
     elif opcion == "5":
         print("\n[Búsqueda de alumno]")
         if cantidad == 0:
@@ -84,6 +91,7 @@ while opcion != "0":
             resultado = buscador_alumno(nombres, nombre_buscado, promedios, notas_parcial_1, notas_parcial_2)
             print(resultado)
 
+    # 6 cuenta las vocales y devuelve el nombre invertido
     elif opcion == "6":
         print("\n[Juegos con un nombre]")
         nombre_ingresado = input("Ingrese un nombre para analizar: ")
@@ -92,8 +100,10 @@ while opcion != "0":
         print(f"Cantidad de vocales: {vocales}")
         print(f"Nombre invertido: {invertido}")
 
+    # 0 rompe el bucle y finaliza la ejecucion
     elif opcion == "0":
         print("\nSaliendo de NOTAFACIL. Hasta luego!")
 
+    # control de errores por opcion inexistente
     else:
         print("\nOpcion no valida. Por favor, ingrese un numero del 0 al 6.")
