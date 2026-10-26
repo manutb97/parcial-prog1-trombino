@@ -1,4 +1,5 @@
 from procesamiento import *
+from validaciones import validar_nombre, validar_nota
 
 nombres = []
 promedios = []
@@ -22,9 +23,9 @@ while opcion != "0":
 
     if opcion == "1":
         print("\n[Carga de datos]")
-        nombre = input("Ingrese el nombre del alumno: ")
-        n1 = float(input("Ingrese nota del parcial 1: "))
-        n2 = float(input("Ingrese nota del parcial 2: "))
+        nombre = validar_nombre()  # Usa tu función que valida letras y espacios
+        n1 = validar_nota(1)       # Valida que la nota 1 esté entre 0 y 10
+        n2 = validar_nota(2)       # Valida que la nota 2 esté entre 0 y 10
         prom = (n1 + n2) / 2
 
         nombres = nombres + [nombre]
